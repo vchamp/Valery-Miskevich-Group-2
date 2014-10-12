@@ -26,7 +26,7 @@ public class TestClassLoader extends SecureClassLoader {
 	
 	static final Logger logger = Logger.getLogger(TestClassLoader.class);
 
-    private String JAR_PATH = "D:/eclipse/workspace2/JMP/lib/test_v2.jar";
+    private String JAR_PATH = "./lib/test_v2.jar";
 
     public TestClassLoader(ClassLoader parent) {
         super(parent);
