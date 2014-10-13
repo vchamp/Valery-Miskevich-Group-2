@@ -1,0 +1,1 @@
+java -XX:+UseSerialGC -Xms6m -Xmx18m -XX:NewSize=2m -XX:PermSize=512m -XX:MaxPermSize=30m -jar D:\eclipse\workspace\JMP\GC\app.jar

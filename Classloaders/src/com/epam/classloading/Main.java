@@ -23,7 +23,7 @@ public class Main {
 			if(option.equals("1")){
 				System.out.println("=====load v1=====\n");
 				
-				ClassLoader loader = new TestClassLoader("D:/eclipse/workspace2/JMP/lib/test_v1.jar");
+				ClassLoader loader = new TestClassLoader("./lib/test_v1.jar");
 	            process(loader);
 				
 	            
