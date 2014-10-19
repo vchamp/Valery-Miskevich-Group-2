@@ -7,8 +7,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.support.v4.util.LruCache;
 import android.util.Log;
-import android.util.SparseArray;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -29,15 +29,40 @@ public class BitmapProvider {
 
     private List<BitmapProviderListener> listeners = new ArrayList<BitmapProviderListener>();
 
-    private SparseArray<WeakReference<Bitmap>> cache = new SparseArray<WeakReference<Bitmap>>();
+//    private SparseArray<WeakReference<Bitmap>> cache = new SparseArray<WeakReference<Bitmap>>();
+
+
+//    private LruCache<Integer, WeakReference<Bitmap>> cache;
+    private LruCache<Integer, Bitmap> cache;
 
     private WeakReference<Context> contextReference = new WeakReference<Context>(null);
 
     private BitmapProvider(Context context) {
         super();
+
         if (contextReference.get() == null) {
             contextReference = new WeakReference<Context>(context);
         }
+
+        Log.d(LOG_TAG, "Mem class: " + getMemClass());
+
+        int maxSize = (getMemClass() / 16) * 1024 * 1024;
+
+//        cache = new LruCache<Integer, WeakReference<Bitmap>>(maxSize) {
+//            @Override protected int sizeOf(Integer key, WeakReference<Bitmap> value) {
+//                Bitmap bm = value.get();
+//                if (bm == null)
+//                    return 1;
+//                else
+//                    return Build.VERSION.SDK_INT >= 12 ? bm.getByteCount() : bm.getRowBytes() * bm.getHeight();
+//            }
+//        };
+        cache = new LruCache<Integer, Bitmap>(maxSize) {
+            @Override protected int sizeOf(Integer key, Bitmap value) {
+
+                return Build.VERSION.SDK_INT >= 12 ? value.getByteCount() : value.getRowBytes() * value.getHeight();
+            }
+        };
     }
 
     public static BitmapProvider getInstance(Context context) {
@@ -81,7 +106,7 @@ public class BitmapProvider {
             loadBitmap(imageView, index, width, height);
     }
 
-    public Bitmap getImage(int index){
+    public Bitmap getImage(int index) {
         Bitmap cached = getFromCache(index);
         if (cached != null)
             return cached;
@@ -89,19 +114,30 @@ public class BitmapProvider {
             return getBitmap(index, 0, 0);
     }
 
+//    private Bitmap getFromCache(int index) {
+//        Bitmap cached = null;
+//        WeakReference<Bitmap> bitmapWeakReference = cache.get(index);
+//        if (bitmapWeakReference != null) {
+//            cached = bitmapWeakReference.get();
+//            if (cached != null) {
+//
+//                Log.d(LOG_TAG, "get from cache, name " + index);
+//
+//            }
+//        }
+//        return cached;
+//    }
+
     private Bitmap getFromCache(int index) {
-        Bitmap cached = null;
-        WeakReference<Bitmap> bitmapWeakReference = cache.get(index);
-        if (bitmapWeakReference != null) {
-            cached = bitmapWeakReference.get();
+        Bitmap cached = cache.get(index);
             if (cached != null) {
 
                 Log.d(LOG_TAG, "get from cache, name " + index);
 
             }
-        }
         return cached;
     }
+
 
 //    public Bitmap getImage(int index, int width, int height) {
 //        return Bitmap.createScaledBitmap(getImage(index), width, height, false);
@@ -121,7 +157,11 @@ public class BitmapProvider {
 
             @Override protected void onPostExecute(Bitmap bm) {
                 imageView.setImageBitmap(bm);
-                cache.put(index, new WeakReference<Bitmap>(bm));
+                if(cache.get(index)!=null ) {
+                   cache.remove(index);
+                }
+//                cache.put(index, new WeakReference<Bitmap>(bm));
+                cache.put(index, bm);
                 Log.d(LOG_TAG, "cache put ind: " + index);
                 Log.d(LOG_TAG, "cache size: " + cache.size());
             }
@@ -224,13 +264,15 @@ public class BitmapProvider {
     }
 
     private int getMemClass() { //TODO use with LRUCache
+
         if (contextReference.get() != null) {
             ActivityManager activityManager = (ActivityManager) contextReference.get().getSystemService(Context.ACTIVITY_SERVICE);
             return activityManager.getMemoryClass();
-        } else return -1;
+        } else return 8; //default
     }
 
     public void cleanCache() {
-        cache.clear();
+//        cache.clear();
+        cache.evictAll();
     }
 }
