@@ -98,12 +98,12 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 
         @Override
         public Object getItem(int position) {
-            return position+""+id;
+            return ImagesApplication.App.get().images().getImage(position);
         }
 
         @Override
         public long getItemId(int position) {
-            return id++;
+            return position;
         }
 
         @Override

@@ -74,17 +74,33 @@ public class BitmapProvider {
     }
 
     public void setImage(ImageView imageView, final int index, int width, int height) {
+        Bitmap cached = getFromCache(index);
+        if (cached != null)
+            imageView.setImageBitmap(cached);
+        else
+            loadBitmap(imageView, index, width, height);
+    }
+
+    public Bitmap getImage(int index){
+        Bitmap cached = getFromCache(index);
+        if (cached != null)
+            return cached;
+        else
+            return getBitmap(index, 0, 0);
+    }
+
+    private Bitmap getFromCache(int index) {
+        Bitmap cached = null;
         WeakReference<Bitmap> bitmapWeakReference = cache.get(index);
         if (bitmapWeakReference != null) {
-            Bitmap cached = bitmapWeakReference.get();
+            cached = bitmapWeakReference.get();
             if (cached != null) {
 
                 Log.d(LOG_TAG, "get from cache, name " + index);
-                imageView.setImageBitmap(cached);
 
             }
         }
-        loadBitmap(imageView, index, width, height);
+        return cached;
     }
 
 //    public Bitmap getImage(int index, int width, int height) {
@@ -100,40 +116,7 @@ public class BitmapProvider {
             }
 
             @Override protected Bitmap doInBackground(Integer... params) {
-                AssetManager assetManager = ImagesApplication.App.get().getAssets();
-                final Integer index = params[0];
-                String imageName = "images/" + (index + 1) + ".jpg";
-
-                Log.d(LOG_TAG, imageName);
-                InputStream inputStream = null;
-                Bitmap bitmap = null;
-                try {
-                    inputStream = assetManager.open(imageName);
-
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-
-                    options.inJustDecodeBounds = true;
-
-                    BitmapFactory.decodeStream(inputStream, null, options);
-
-                    options.inSampleSize = calculateInSampleSize2(options, params[1], params[2]);
-
-                    Log.d(LOG_TAG, "input width = " + options.outWidth + ", " + "input height = " + options.outHeight);
-                    Log.d(LOG_TAG, "sample size = " + options.inSampleSize);
-                    Log.d(LOG_TAG, "format = " + options.outMimeType);
-
-                    options.inJustDecodeBounds = false;
-
-                    bitmap = BitmapFactory.decodeStream(inputStream, null, options);
-
-
-
-                } catch (IOException e) {
-                    Log.d("BitmapProvider", "error loading image " + imageName);
-                } finally {
-                    IO.close(inputStream);
-                }
-                return bitmap;
+                return getBitmap(params);
             }
 
             @Override protected void onPostExecute(Bitmap bm) {
@@ -149,6 +132,47 @@ public class BitmapProvider {
             task.execute(index, width, height);
 
 
+    }
+
+    private Bitmap getBitmap(Integer... params) {
+        AssetManager assetManager = ImagesApplication.App.get().getAssets();
+        final Integer index = params[0];
+        String imageName = "images/" + (index + 1) + ".jpg";
+
+        Log.d(LOG_TAG, imageName);
+        InputStream inputStream = null;
+        Bitmap bitmap = null;
+        try {
+            inputStream = assetManager.open(imageName);
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+
+            Integer width = params[1];
+            Integer height = params[2];
+
+            if (width > 0 && height > 0) {
+                options.inJustDecodeBounds = true;
+
+                BitmapFactory.decodeStream(inputStream, null, options);
+
+
+                options.inSampleSize = calculateInSampleSize2(options, width, height);
+
+                Log.d(LOG_TAG, "input width = " + options.outWidth + ", " + "input height = " + options.outHeight);
+                Log.d(LOG_TAG, "sample size = " + options.inSampleSize);
+                Log.d(LOG_TAG, "format = " + options.outMimeType);
+
+                options.inJustDecodeBounds = false;
+            }
+            bitmap = BitmapFactory.decodeStream(inputStream, null, options);
+
+
+        } catch (IOException e) {
+            Log.d("BitmapProvider", "error loading image " + imageName);
+        } finally {
+            IO.close(inputStream);
+        }
+        return bitmap;
     }
 
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
