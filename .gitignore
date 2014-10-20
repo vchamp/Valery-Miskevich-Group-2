@@ -2,6 +2,7 @@ bin/
 gen/
 MemoryManagement/.classpath
 MemoryManagement/build/
-*.xml
+
 MemoryManagement/.idea
 *.idea
+MemoryManagement/atlassian-ide-plugin.xml
