@@ -1,45 +1,39 @@
 package com.epam.jmp;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
+
+import org.apache.log4j.Logger;
 
 public class Server {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
-	public static void main(String[] args) throws IOException {
+	static final Logger logger = Logger.getLogger(ClientConnection.class);
+	
+	public static void main(String[] args) {
 		
 		int port = 19999;
+		int clientNumber = 0;
 		
 		try ( 
 			    ServerSocket serverSocket = new ServerSocket(port);
-			    Socket clientSocket = serverSocket.accept();
-			    PrintWriter out =
-			        new PrintWriter(clientSocket.getOutputStream(), true);
-			    BufferedReader in = new BufferedReader(
-			        new InputStreamReader(clientSocket.getInputStream()));
+			    
 			) {
 		
-			 String inputLine, outputLine;
-	            
-			    // Initiate conversation with client
-			    Protocol kkp = new Protocol();
-			    outputLine = kkp.processInput(null);
-			    out.println(outputLine);
-
-			    while ((inputLine = in.readLine()) != null) {
-			        outputLine = kkp.processInput(inputLine);
-			        out.println(outputLine);
-			        if (outputLine.equals("Bye."))
-			            break;
-		}
-	}
+			while(true) {
+				
+				Socket clientSocket = serverSocket.accept();
+				String newClient = "Client - "+(++clientNumber);
+				Thread clientConnection = new Thread(new ClientConnection(clientSocket, clientNumber), newClient);
+				clientConnection.start();
+				
+				logger.info("New client: " + newClient);
+			}
+		} catch (IOException e) {
+			
+			logger.error("Server", e);
+		} 
 	}
 
 }

@@ -1,62 +1,84 @@
 package com.epam.jmp;
 
+import com.epam.jmp.model.Account;
+import com.epam.jmp.model.Bank;
+
 public class Protocol {
 
 	private static final int WAITING = 0;
-    private static final int SENTKNOCKKNOCK = 1;
-    private static final int SENTCLUE = 2;
+    private static final int SENT_WELCOME = 1;
+    private static final int LOGIN_AS_CLIENT = 2,
+    		CLIENT_OPERATIONS = 3;
+    private static final int OFFICE_OPERATIONS = 4;
+    
     private static final int ANOTHER = 3;
 
-    private static final int NUMJOKES = 5;
 
     private int state = WAITING;
-    private int currentJoke = 0;
 
-    private String[] clues = { "Turnip", "Little Old Lady", "Atch", "Who", "Who" };
-    private String[] answers = { "Turnip the heat, it's cold in here!",
-                                 "I didn't know you could yodel!",
-                                 "Bless you!",
-                                 "Is there an owl in here?",
-                                 "Is there an echo in here?" };
 
     public String processInput(String theInput) {
+    	
         String theOutput = null;
 
         if (state == WAITING) {
-            theOutput = "Knock! Knock!";
-            state = SENTKNOCKKNOCK;
-        } else if (state == SENTKNOCKKNOCK) {
-            if (theInput.equalsIgnoreCase("Who's there?")) {
-                theOutput = clues[currentJoke];
-                state = SENTCLUE;
+            theOutput = "Welcome! Enter as: client [1] ,office [2]";
+            state = SENT_WELCOME;
+        } else if (state == SENT_WELCOME) {
+        	
+            if (theInput.equalsIgnoreCase("1")) {
+                
+            	theOutput = "Enter your name:";
+                state = LOGIN_AS_CLIENT;
+                
+            } else if (theInput.equalsIgnoreCase("2")) {
+            	
+                theOutput = "Input operations: (search {value}, filter {name, ballance, currency})";
+                state = OFFICE_OPERATIONS;
+                
             } else {
-                theOutput = "You're supposed to say \"Who's there?\"! " +
-			    "Try again. Knock! Knock!";
+            	
+                theOutput = "You're supposed to \"1\" or \"2\" \n Try again.";
             }
-        } else if (state == SENTCLUE) {
-            if (theInput.equalsIgnoreCase(clues[currentJoke] + " who?")) {
-                theOutput = answers[currentJoke] + " Want another? (y/n)";
-                state = ANOTHER;
-            } else {
-                theOutput = "You're supposed to say \"" + 
-			    clues[currentJoke] + 
-			    " who?\"" + 
-			    "! Try again. Knock! Knock!";
-                state = SENTKNOCKKNOCK;
-            }
-        } else if (state == ANOTHER) {
-            if (theInput.equalsIgnoreCase("y")) {
-                theOutput = "Knock! Knock!";
-                if (currentJoke == (NUMJOKES - 1))
-                    currentJoke = 0;
-                else
-                    currentJoke++;
-                state = SENTKNOCKKNOCK;
-            } else {
-                theOutput = "Bye.";
-                state = WAITING;
-            }
+        } else if (state == LOGIN_AS_CLIENT) {
+        	
+        	Account acc = openOrCreateAccount(theInput);
+        	theOutput = printAccount(acc);
+        	state = CLIENT_OPERATIONS;
+        	
+        } else if (state == OFFICE_OPERATIONS) {
+        	
+            Bank bank = getBank();
+            theOutput = printBank(bank);
         }
         return theOutput;
+    }
+    
+    private String printBank(Bank bank) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Bank getBank() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private String printAccount(Account acc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Account openOrCreateAccount(String theInput) {
+		//for(String )
+		return null;
+	}
+
+	static class ClientProtocol {
+    	
+    }
+    
+    static class OfficeProtocol {
+    	
     }
 }
