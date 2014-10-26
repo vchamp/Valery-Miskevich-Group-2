@@ -19,14 +19,15 @@ public class IO {
 
 	static final Logger logger = Logger.getLogger(IO.class);
 	
-	public static final String DIR = "./storage";
+	private static final String DIR = "./storage";
 
 	private static IO instance;
 	
 	private IO() {
 		Path dir = new File(DIR).toPath();
 		try {
-			Files.createDirectory(dir);
+			if(!Files.exists(dir))
+				Files.createDirectory(dir);
 		} catch (IOException e) {
 			logger.error("IO", e);
 		}
@@ -40,12 +41,12 @@ public class IO {
 	}
 	
 	public synchronized void write(Account object) {
-		Gson gson = new Gson();
-		String json = gson.toJson(object);
+//		Gson gson = new Gson();
+		String json = object.toString();
 		//todo write to file
 		File f = new File(DIR, object.getName());
 		
-		try (BufferedWriter writer = Files.newBufferedWriter(f.toPath(), Charset.forName("UTF-8"), StandardOpenOption.CREATE)) {
+		try (BufferedWriter writer = Files.newBufferedWriter(f.toPath(), Charset.forName("UTF-8"), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
 		    writer.write(json, 0, json.length());
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
@@ -54,16 +55,18 @@ public class IO {
 	
 	public synchronized Account read(String name) {
 		
-		if(!accountList().contains(name))
+		File f = new File(DIR, name);
+		
+		if(!f.exists())
 			return null;
 		
-		File f = new File(DIR, name);
 		try (BufferedReader reader = Files.newBufferedReader(f.toPath(), Charset.forName("UTF-8"))) {
-			Gson gson = new Gson();
-			return gson.fromJson(reader, Account.class);
+			String s = reader.readLine();
+			return new Account(s);
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
 		}
+		
 		return null; 
 	}
 	

@@ -25,8 +25,7 @@ public class Server {
 				
 				Socket clientSocket = serverSocket.accept();
 				String newClient = "Client - "+(++clientNumber);
-				Thread clientConnection = new Thread(new ClientConnection(clientSocket, clientNumber), newClient);
-				clientConnection.start();
+				new ClientConnection(clientSocket, clientNumber).start();
 				
 				logger.info("New client: " + newClient);
 			}

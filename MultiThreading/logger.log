@@ -39,3 +39,256 @@ java.net.SocketException: Connection reset
 	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
 	at java.lang.Thread.run(Unknown Source)
 2014-10-25 15:22:15 INFO  ClientConnection:31 - New client: Client - 1
+2014-10-26 17:18:18 INFO  ClientConnection:31 - New client: Client - 1
+2014-10-26 17:19:17 INFO  ClientConnection:31 - New client: Client - 1
+2014-10-26 17:22:31 INFO  ClientConnection:31 - New client: Client - 2
+2014-10-26 17:26:25 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+	at java.lang.Thread.run(Thread.java:722)
+2014-10-26 17:26:48 INFO  ClientConnection:31 - New client: Client - 1
+2014-10-26 17:27:36 ERROR ClientConnection:35 - Server
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:96)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:175)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:128)
+	at com.epam.jmp.Server.main(Server.java:20)
+2014-10-26 17:28:01 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+	at java.lang.Thread.run(Thread.java:722)
+2014-10-26 17:28:07 ERROR ClientConnection:35 - Server
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:96)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:175)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:128)
+	at com.epam.jmp.Server.main(Server.java:20)
+2014-10-26 17:31:48 ERROR ClientConnection:35 - Server
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:96)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:175)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:128)
+	at com.epam.jmp.Server.main(Server.java:20)
+2014-10-26 17:32:21 INFO  ClientConnection:31 - New client: Client - 1
+2014-10-26 17:44:37 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+	at java.lang.Thread.run(Thread.java:722)
+2014-10-26 17:44:57 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:11:02 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 18:11:28 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:19:21 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 18:19:35 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:20:56 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 18:21:12 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:22:32 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 18:22:46 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:22:59 ERROR IO:31 - IO
+java.nio.file.FileAlreadyExistsException: .\storage
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:81)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.createDirectory(WindowsFileSystemProvider.java:512)
+	at java.nio.file.Files.createDirectory(Files.java:628)
+	at com.epam.jmp.io.IO.<init>(IO.java:29)
+	at com.epam.jmp.io.IO.get(IO.java:37)
+	at com.epam.jmp.Protocol.openOrCreateAccount(Protocol.java:86)
+	at com.epam.jmp.Protocol.processInput(Protocol.java:53)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:46)
+2014-10-26 18:33:01 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 18:33:17 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:34:20 INFO  ClientConnection:30 - New client: Client - 2
+2014-10-26 18:42:52 ERROR ClientConnection:53 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 18:45:42 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:46:23 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 18:46:43 ERROR IO:31 - IO
+java.nio.file.FileAlreadyExistsException: .\storage
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:81)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.createDirectory(WindowsFileSystemProvider.java:512)
+	at java.nio.file.Files.createDirectory(Files.java:628)
+	at com.epam.jmp.io.IO.<init>(IO.java:29)
+	at com.epam.jmp.io.IO.get(IO.java:37)
+	at com.epam.jmp.Protocol.openOrCreateAccount(Protocol.java:86)
+	at com.epam.jmp.Protocol.processInput(Protocol.java:53)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:45)
+2014-10-26 19:27:56 ERROR ClientConnection:52 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
+2014-10-26 19:28:24 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 19:37:11 ERROR ClientConnection:52 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
+2014-10-26 19:37:32 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 19:37:57 INFO  ClientConnection:30 - New client: Client - 2
+2014-10-26 19:41:11 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 19:42:43 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 19:43:32 INFO  ClientConnection:30 - New client: Client - 2
+2014-10-26 19:43:53 INFO  ClientConnection:30 - New client: Client - 3
+2014-10-26 19:54:17 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 22:15:34 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 22:16:46 ERROR ClientConnection:52 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
+2014-10-26 22:17:07 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 22:19:49 ERROR ClientConnection:52 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
+2014-10-26 22:20:15 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 22:26:11 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 22:27:40 ERROR ClientConnection:52 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
+2014-10-26 22:28:00 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-26 22:30:08 INFO  ClientConnection:30 - New client: Client - 2

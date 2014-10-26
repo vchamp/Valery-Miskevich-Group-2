@@ -2,7 +2,7 @@ package com.epam.jmp.model;
 
 public class Account {
 	
-	private static final String SEPARATOR = "\t|\t";
+	private static final String SEPARATOR = ";";
 	private String name;
 	private float ballance;
 	private Currency currency;
@@ -20,13 +20,18 @@ public class Account {
 		
 		this.name = values[0];
 		this.ballance = Float.valueOf(values[1]);
-		this.currency = Currency.resolveByName(values[3]);
+		this.currency = Currency.resolveByName(values[2]);
 	}
 	
 	@Override
 	public String toString() {
 		
 		return name + SEPARATOR + ballance + SEPARATOR + currency.name();
+	}
+	
+	public String print() {
+		
+		return name + "\t|\t" + ballance + "\t|\t" + currency.name();
 	}
 
 	public String getName() {
@@ -50,7 +55,17 @@ public class Account {
 	}
 
 	public void setCurrency(Currency currency) {
+		ballance = Currency.convert(this.currency, currency, ballance);
 		this.currency = currency;
+	}
+
+	public void depositMoney(Float value) {
+		ballance+=value;
+		
+	}
+	
+	public void withdrawMoney(Float value) {
+		ballance-=value;
 	}
 	
 	

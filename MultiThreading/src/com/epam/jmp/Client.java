@@ -23,22 +23,22 @@ public class Client {
 		try (
 			    Socket kkSocket = new Socket(host, port);
 			    PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true);
-			    BufferedReader in = new BufferedReader(
-			        new InputStreamReader(kkSocket.getInputStream()));
+			    BufferedReader in = new BufferedReader(new InputStreamReader(kkSocket.getInputStream()));
 			) {
 			
 			BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
             String fromServer;
             String fromUser;
 	            
-			while ((fromServer = in.readLine()) != null) {
-			    System.out.println("Server: " + fromServer);
+            
+            while ((fromServer = in.readLine()) != null) {
+			    System.out.println("" + fromServer.replaceAll("\\$\\$", "\n"));
 			    if (fromServer.equals("Bye."))
 			        break;
-
+			    
 			    fromUser = stdIn.readLine();
 			    if (fromUser != null) {
-			        System.out.println("Client: " + fromUser);
+			        //System.out.println("Client: " + fromUser);
 			        out.println(fromUser);
 			    }
 			}

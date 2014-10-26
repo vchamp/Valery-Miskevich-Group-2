@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 
 import com.epam.jmp.io.IO;
 
-public class ClientConnection implements Runnable {
+public class ClientConnection extends Thread {
 	
 	static final Logger logger = Logger.getLogger(ClientConnection.class);
 	
@@ -27,13 +27,12 @@ public class ClientConnection implements Runnable {
 	@Override
 	public void run() {
 		
-		PrintWriter out = null;
-		BufferedReader in = null;
 		
-		try {
-			
-		    out = new PrintWriter(socket.getOutputStream(), true);
-		    in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		try (
+				PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
+			    )
+			{
 			
 			String inputLine, outputLine;
 	        
@@ -51,11 +50,7 @@ public class ClientConnection implements Runnable {
 		    
 		} catch (IOException e) {
 			logger.error("Client connection", e);
-		} finally {
-			
-			IO.close(out);
-			IO.close(in);
-		}
+		} 
 	}
 
 	
