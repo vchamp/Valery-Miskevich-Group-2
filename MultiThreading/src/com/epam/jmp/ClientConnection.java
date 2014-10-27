@@ -22,6 +22,7 @@ public class ClientConnection extends Thread {
 	public ClientConnection(Socket socket, int clientNumber) {
 		this.socket = socket;
 		this.clientNumber = clientNumber;
+		setDaemon(true);
 	}
 
 	@Override

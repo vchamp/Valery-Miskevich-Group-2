@@ -1,5 +1,6 @@
 package com.epam.jmp;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 import com.epam.jmp.io.IO;
@@ -44,12 +45,12 @@ public class Protocol {
                 
             } else if (theInput.equalsIgnoreCase("2")) {
             	
-                theOutput = "Input operations: (show all, search {value}, filter {name, ballance, currency})";
+                theOutput = "Enter operation: (show all, search {value}, filter {> ballance, < balance}, add {account name}, remove {account name})";
                 state = OFFICE_OPERATIONS;
                 
             } else {
             	
-                theOutput = "You're supposed to \"1\" or \"2\" \n Try again.";
+                theOutput = "You're supposed to \"1\" or \"2\" $$ Try again.";
             }
         } else if (state == LOGIN_AS_CLIENT) {
         	if(checkName(theInput)){
@@ -98,11 +99,13 @@ public class Protocol {
         			Bank.get().updateAccount(currentAccount);
         			theOutput = currentAccount.print() + " $$ Enter another operation: ";
         		}
-        	} else {
+        	} 
+        	else {
         		theOutput = "Please, enter correct command";
         	}
 
         } else if (state == OFFICE_OPERATIONS) {
+        	
         	
         	if(theInput.equalsIgnoreCase("show all")) {
         		
@@ -110,9 +113,42 @@ public class Protocol {
         		
         	} else if(theInput.startsWith("search ")) {
         		
+        		String[] data = theInput.split(" ", 2);
+        		String reults = Bank.get().search(data[1]);
+        		theOutput = reults;
+        		
         	} else if(theInput.equalsIgnoreCase("filter ")) {
         		
-        	} else {
+        		String[] data = theInput.split(" ", 3);
+        		
+        		if(data.length!=3 && (data[1].equals(">") || data[1].equals("<")) && checkNumberFormat(data[2])) 
+        			theOutput = "Please, enter correct command";
+        		else {
+        			String results = Bank.get().filter(data[1], data[2]);
+        			theOutput = results;
+        		}
+        		
+        	} else if(theInput.startsWith("add ")) {
+        		String[] data = theInput.split(" ", 2);
+        		if(checkName(data[1])) {
+        			theOutput = Bank.get().openOrCreateAccount(data[1]).print();
+        		} else {
+        			theOutput = "Enter correct account name.";
+        		}
+        		
+        	} else if(theInput.startsWith("remove ")) {
+        		String[] data = theInput.split(" ", 2);
+        		if(checkName(data[1])) {
+        			if(Bank.get().deleteAccount(data[1])){
+        				theOutput = "Account "+data[1]+ " deleted.";
+        			} else {
+        				theOutput = "Error deleting "+data[1]+ ". ";
+        			}
+        		} else {
+        			theOutput = "Enter correct account name.";
+        		}
+        	} 
+        	else {
         	
         		theOutput = "Please, enter correct command";
             }

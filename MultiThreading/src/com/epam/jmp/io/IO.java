@@ -2,7 +2,9 @@ package com.epam.jmp.io;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -93,4 +95,21 @@ public class IO {
             }
         }
     }
+
+	public boolean delete(String string) {
+		File file = new File(DIR, string);
+		boolean result = false;
+		try {
+		    Files.delete(file.toPath());
+		    result = true;
+		} catch (NoSuchFileException x) {
+		    System.err.format("%s: no such" + " file or directory%n", file);
+		} catch (DirectoryNotEmptyException x) {
+		    System.err.format("%s not empty%n", file);
+		} catch (IOException x) {
+		    // File permission problems are caught here.
+		    System.err.println(x);
+		} 
+		return result;
+	}
 }

@@ -292,3 +292,23 @@ java.net.SocketException: Connection reset
 	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
 2014-10-26 22:28:00 INFO  ClientConnection:30 - New client: Client - 1
 2014-10-26 22:30:08 INFO  ClientConnection:30 - New client: Client - 2
+2014-10-27 03:50:04 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-27 03:50:40 INFO  ClientConnection:30 - New client: Client - 2
+2014-10-27 03:51:15 INFO  ClientConnection:30 - New client: Client - 3
+2014-10-27 03:51:31 INFO  ClientConnection:30 - New client: Client - 4
+2014-10-27 03:53:14 ERROR ClientConnection:52 - Client connection
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.readLine(Unknown Source)
+	at java.io.BufferedReader.readLine(Unknown Source)
+	at com.epam.jmp.ClientConnection.run(ClientConnection.java:44)
+2014-10-27 03:53:33 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-27 03:53:43 INFO  ClientConnection:30 - New client: Client - 2
+2014-10-27 03:54:47 INFO  ClientConnection:30 - New client: Client - 1
+2014-10-27 03:54:59 INFO  ClientConnection:30 - New client: Client - 2

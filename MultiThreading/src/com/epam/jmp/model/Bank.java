@@ -58,4 +58,33 @@ public class Bank {
 		IO.get().write(account);
 		
 	}
+
+	public String search(String string) {
+		StringBuilder builder = new StringBuilder();
+		for(Account a : getClientAccounts()){
+			if(a.getName().startsWith(string))
+				builder.append(a.print()).append("$$");
+		}
+		return builder.toString();
+	}
+
+	public String filter(String operation, String value) {
+		StringBuilder builder = new StringBuilder();
+		for(Account a : getClientAccounts()){
+			if(operation.equals(">") && a.getBallance() > Float.valueOf(value)){
+				builder.append(a.print()).append("$$");
+			} if(operation.equals("<") && a.getBallance() < Float.valueOf(value)){
+				builder.append(a.print()).append("$$");
+			}
+		}
+		return builder.toString();
+	}
+
+	public boolean deleteAccount(String string) {
+		boolean result = false;
+		if(IO.get().accountList().contains(string)){
+			result = IO.get().delete(string);
+		}
+		return result;
+	}
 }
