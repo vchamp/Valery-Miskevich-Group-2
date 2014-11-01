@@ -1,11 +1,14 @@
 package com.epam.jmp.io;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.Closeable;
+import java.io.File;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
@@ -13,9 +16,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.epam.jmp.ClientConnection;
 import com.epam.jmp.model.Account;
-import com.google.gson.Gson;
 
 public class IO {
 
@@ -42,17 +43,19 @@ public class IO {
 		return instance;
 	}
 	
-	public synchronized void write(Account object) {
-//		Gson gson = new Gson();
+	public synchronized String write(Account object) {
+		String fileName = "No name";
 		String json = object.toString();
 		//todo write to file
 		File f = new File(DIR, object.getName());
 		
 		try (BufferedWriter writer = Files.newBufferedWriter(f.toPath(), Charset.forName("UTF-8"), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
 		    writer.write(json, 0, json.length());
+		    fileName = f.toString();
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
 		}
+		return fileName;
 	}
 	
 	public synchronized Account read(String name) {

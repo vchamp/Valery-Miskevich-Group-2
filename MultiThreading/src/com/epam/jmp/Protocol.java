@@ -1,25 +1,19 @@
 package com.epam.jmp;
 
-import java.util.List;
 import java.util.regex.Pattern;
 
-import com.epam.jmp.io.IO;
 import com.epam.jmp.model.Account;
 import com.epam.jmp.model.Bank;
 import com.epam.jmp.model.Currency;
 
 public class Protocol {
 
-	private static final String NEW_LINE = System.getProperty("line.separator");
-	
 	private static final int WAITING = 0;
     private static final int SENT_WELCOME = 1;
     private static final int LOGIN_AS_CLIENT = 2,
     		CLIENT_OPERATIONS = 3;
     private static final int OFFICE_OPERATIONS = 4;
     
-    private static final int ANOTHER = 3;
-
 
     private int state = WAITING;
 
