@@ -1,0 +1,52 @@
+body {
+    font: 1.2em "Roboto", Tahoma, Arial;
+}
+
+.regForm {
+    width: 450px;
+    min-width: 300px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.converter {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: lightblue;
+    padding: 0 10px 10px 10px;
+    margin-top: 20px;
+}
+
+.converter h3 {
+    text-align: center;
+}
+.regForm table {
+    width: 100%;
+    min-width: 300px;
+}
+
+.regForm .field {
+    width: 98%;
+    border: 1px solid #B9BDC1;
+    color: #292929;
+    box-shadow: 0 2px 4px #BBB inset;
+    border-radius: 3px;
+    font-size: 1em;
+
+}
+
+.regForm .field:focus {
+    background-color: #E7E8E7;
+    outline: 0;
+}
+
+#btnLogin {
+    padding: 4px 8px;
+    text-transform: capitalize;
+    font-weight: bold;
+
+}
+
