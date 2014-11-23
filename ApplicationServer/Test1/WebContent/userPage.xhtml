@@ -8,9 +8,9 @@
 </head>
 <body>
    	
-   	<h:outputText value="#{userBean.getUserAccounts()}"/>: 
+   	<h:outputText value="#{userBean.getUserAccount()}"/>: 
    	<br />
-   	<input type="button" value="+" onclick="#{request.contextPath}/faces/addBillPage.xhtml"></input>
+   	<h:commandButton value="+" action="#{userBean.addBill}"/>
    	
 </body>
 </html>
