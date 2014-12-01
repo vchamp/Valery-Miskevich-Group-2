@@ -1,0 +1,43 @@
+Started by an SCM change
+Building in workspace D:\eclipse\workspace3\JMP\Jenkins\home\jobs\Android\workspace
+ > C:\Program Files (x86)\Git\cmd\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files (x86)\Git\cmd\git.exe config remote.origin.url https://github.com/alexdzeshko/MaterialDemo.git # timeout=10
+Fetching upstream changes from https://github.com/alexdzeshko/MaterialDemo.git
+ > C:\Program Files (x86)\Git\cmd\git.exe --version # timeout=10
+using .gitcredentials to set credentials
+ > C:\Program Files (x86)\Git\cmd\git.exe config --local credential.helper store --file=\"C:\WINDOWS\TEMP\git1626212564026501107.credentials\" # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe fetch --tags --progress https://github.com/alexdzeshko/MaterialDemo.git +refs/heads/*:refs/remotes/origin/*
+ > C:\Program Files (x86)\Git\cmd\git.exe config --local --remove-section credential # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 13ff53820360cb6a6864974e14e3519c8f1d9c5d (refs/remotes/origin/master)
+ > C:\Program Files (x86)\Git\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe checkout -f 13ff53820360cb6a6864974e14e3519c8f1d9c5d
+ > C:\Program Files (x86)\Git\cmd\git.exe rev-list 13ff53820360cb6a6864974e14e3519c8f1d9c5d # timeout=10
+[Gradle] - Launching build.
+[workspace] $ cmd.exe /C '"D:\eclipse\workspace3\JMP\Jenkins\home\jobs\Android\workspace\gradlew.bat && exit %%ERRORLEVEL%%"'
+WARNING [Project: :app] WARNING: runProguard is deprecated (and will soon stop working); change to "minifyEnabled" instead
+WARNING [Project: :app] WARNING: runProguard is deprecated (and will soon stop working); change to "minifyEnabled" instead
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:help
+
+Welcome to Gradle 2.1.
+
+To run a build, run gradlew <task> ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see a list of command-line options, run gradlew --help
+
+[8mha:AAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 3.547 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+[android-lint] Collecting Android Lint files...
+[android-lint] Finding all files that match the pattern **/build/lint-results.xml
+Archiving artifacts
+ERROR: No artifacts found that match the file pattern "**/*.apk". Configuration error?
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mERROR: ‘**/*.apk’ doesn’t match anything: ‘**’ exists but not ‘**/*.apk’
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mBuild step 'Archive the artifacts' changed build result to FAILURE
+Sending e-mails to: a.dzeshko@gmail.com valery.miskevich@gmail.com
+Finished: FAILURE

@@ -1,0 +1,142 @@
+Started by an SCM change
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace D:\eclipse\workspace3\JMP\Jenkins\home\jobs\Android\workspace
+Installing JDK jdk-7u72-oth-JPR
+Downloading JDK from http://download.oracle.com/otn-pub/java/jdk/7u72-b14/jdk-7u72-windows-i586.exe
+Downloading 134013856bytes
+Installing D:\eclipse\workspace3\JMP\Jenkins\home\tools\hudson.model.JDK\JDK_1.7\jdk.exe
+[JDK_1.7] $ D:\eclipse\workspace3\JMP\Jenkins\home\tools\hudson.model.JDK\JDK_1.7\jdk.exe /s ADDLOCAL="ToolsFeature" REBOOT=ReallySuppress INSTALLDIR=D:\eclipse\workspace3\JMP\Jenkins\home\tools\hudson.model.JDK\JDK_1.7 '/L \"D:\eclipse\workspace3\JMP\Jenkins\home\tools\hudson.model.JDK\JDK_1.7\jdk.exe.install.log\"'
+Cloning the remote Git repository
+Cloning repository https://github.com/alexdzeshko/MaterialDemo.git
+ > C:\Program Files (x86)\Git\cmd\git.exe init D:\eclipse\workspace3\JMP\Jenkins\home\jobs\Android\workspace # timeout=10
+Fetching upstream changes from https://github.com/alexdzeshko/MaterialDemo.git
+ > C:\Program Files (x86)\Git\cmd\git.exe --version # timeout=10
+using .gitcredentials to set credentials
+ > C:\Program Files (x86)\Git\cmd\git.exe config --local credential.helper store --file=\"C:\WINDOWS\TEMP\git5314421983339805232.credentials\" # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe fetch --tags --progress https://github.com/alexdzeshko/MaterialDemo.git +refs/heads/*:refs/remotes/origin/*
+ > C:\Program Files (x86)\Git\cmd\git.exe config --local --remove-section credential # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe config remote.origin.url https://github.com/alexdzeshko/MaterialDemo.git # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe config remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe config remote.origin.url https://github.com/alexdzeshko/MaterialDemo.git # timeout=10
+Fetching upstream changes from https://github.com/alexdzeshko/MaterialDemo.git
+using .gitcredentials to set credentials
+ > C:\Program Files (x86)\Git\cmd\git.exe config --local credential.helper store --file=\"C:\WINDOWS\TEMP\git1703365459509025821.credentials\" # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe fetch --tags --progress https://github.com/alexdzeshko/MaterialDemo.git +refs/heads/*:refs/remotes/origin/*
+ > C:\Program Files (x86)\Git\cmd\git.exe config --local --remove-section credential # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 13ff53820360cb6a6864974e14e3519c8f1d9c5d (refs/remotes/origin/master)
+ > C:\Program Files (x86)\Git\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files (x86)\Git\cmd\git.exe checkout -f 13ff53820360cb6a6864974e14e3519c8f1d9c5d
+First time build. Skipping changelog.
+[Gradle] - Launching build.
+Unpacking http://services.gradle.org/distributions/gradle-2.2-rc-1-bin.zip to D:\eclipse\workspace3\JMP\Jenkins\home\tools\hudson.plugins.gradle.GradleInstallation\gradle on Jenkins
+[workspace] $ cmd.exe /C '"D:\eclipse\workspace3\JMP\Jenkins\home\jobs\Android\workspace\gradlew.bat && exit %%ERRORLEVEL%%"'
+Downloading https://services.gradle.org/distributions/gradle-2.1-all.zip
+........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping C:\WINDOWS\system32\config\systemprofile\.gradle\wrapper\dists\gradle-2.1-all\27drb4udbjf4k88eh2ffdc0n55\gradle-2.1-all.zip to C:\WINDOWS\system32\config\systemprofile\.gradle\wrapper\dists\gradle-2.1-all\27drb4udbjf4k88eh2ffdc0n55
+Download https://jcenter.bintray.com/com/android/tools/build/gradle/0.14.0/gradle-0.14.0.pom
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-gradle/4.11/proguard-gradle-4.11.pom
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-parent/4.11/proguard-parent-4.11.pom
+Download https://jcenter.bintray.com/com/android/tools/build/builder/0.14.0/builder-0.14.0.pom
+Download https://jcenter.bintray.com/com/android/tools/lint/lint/23.2.0/lint-23.2.0.pom
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-base/4.11/proguard-base-4.11.pom
+Download https://jcenter.bintray.com/com/android/tools/build/builder-model/0.14.0/builder-model-0.14.0.pom
+Download https://jcenter.bintray.com/com/android/tools/build/manifest-merger/23.2.0/manifest-merger-23.2.0.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.pom
+Download https://jcenter.bintray.com/com/android/tools/ddms/ddmlib/23.2.0/ddmlib-23.2.0.pom
+Download https://jcenter.bintray.com/com/android/tools/sdk-common/23.2.0/sdk-common-23.2.0.pom
+Download https://jcenter.bintray.com/com/android/tools/build/builder-test-api/0.14.0/builder-test-api-0.14.0.pom
+Download https://jcenter.bintray.com/com/squareup/javawriter/2.5.0/javawriter-2.5.0.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://jcenter.bintray.com/com/android/tools/common/23.2.0/common-23.2.0.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.pom
+Download https://jcenter.bintray.com/com/android/tools/sdklib/23.2.0/sdklib-23.2.0.pom
+Download https://jcenter.bintray.com/org/eclipse/jdt/core/compiler/ecj/4.2.2/ecj-4.2.2.pom
+Download https://jcenter.bintray.com/com/android/tools/lint/lint-checks/23.2.0/lint-checks-23.2.0.pom
+Download https://jcenter.bintray.com/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/17.0/guava-17.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/17.0/guava-parent-17.0.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.1.1/httpcomponents-client-4.1.1.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/project/4.1.1/project-4.1.1.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.1/httpcomponents-client-4.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/33/commons-parent-33.pom
+Download https://jcenter.bintray.com/org/apache/apache/13/apache-13.pom
+Download https://jcenter.bintray.com/com/android/tools/layoutlib/layoutlib-api/23.2.0/layoutlib-api-23.2.0.pom
+Download https://jcenter.bintray.com/com/android/tools/dvlib/23.2.0/dvlib-23.2.0.pom
+Download https://jcenter.bintray.com/com/android/tools/lint/lint-api/23.2.0/lint-api-23.2.0.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-analysis/4.0/asm-analysis-4.0.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-parent/4.0/asm-parent-4.0.pom
+Download https://jcenter.bintray.com/org/ow2/ow2/1.3/ow2-1.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-core/4.1/httpcomponents-core-4.1.pom
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/5/commons-parent-5.pom
+Download https://jcenter.bintray.com/org/apache/apache/4/apache-4.pom
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.4/commons-codec-1.4.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/11/commons-parent-11.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm/4.0/asm-4.0.pom
+Download https://jcenter.bintray.com/com/android/tools/external/lombok/lombok-ast/0.2.2/lombok-ast-0.2.2.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/4.0/asm-tree-4.0.pom
+Download https://jcenter.bintray.com/com/android/tools/build/gradle/0.14.0/gradle-0.14.0.jar
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-gradle/4.11/proguard-gradle-4.11.jar
+Download https://jcenter.bintray.com/com/android/tools/build/builder/0.14.0/builder-0.14.0.jar
+Download https://jcenter.bintray.com/com/android/tools/lint/lint/23.2.0/lint-23.2.0.jar
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-base/4.11/proguard-base-4.11.jar
+Download https://jcenter.bintray.com/com/android/tools/build/builder-model/0.14.0/builder-model-0.14.0.jar
+Download https://jcenter.bintray.com/com/android/tools/build/manifest-merger/23.2.0/manifest-merger-23.2.0.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar
+Download https://jcenter.bintray.com/com/android/tools/ddms/ddmlib/23.2.0/ddmlib-23.2.0.jar
+Download https://jcenter.bintray.com/com/android/tools/sdk-common/23.2.0/sdk-common-23.2.0.jar
+Download https://jcenter.bintray.com/com/android/tools/build/builder-test-api/0.14.0/builder-test-api-0.14.0.jar
+Download https://jcenter.bintray.com/com/squareup/javawriter/2.5.0/javawriter-2.5.0.jar
+Download https://jcenter.bintray.com/com/android/tools/common/23.2.0/common-23.2.0.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar
+Download https://jcenter.bintray.com/com/android/tools/sdklib/23.2.0/sdklib-23.2.0.jar
+Download https://jcenter.bintray.com/org/eclipse/jdt/core/compiler/ecj/4.2.2/ecj-4.2.2.jar
+Download https://jcenter.bintray.com/com/android/tools/lint/lint-checks/23.2.0/lint-checks-23.2.0.jar
+Download https://jcenter.bintray.com/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/17.0/guava-17.0.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.jar
+Download https://jcenter.bintray.com/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar
+Download https://jcenter.bintray.com/com/android/tools/layoutlib/layoutlib-api/23.2.0/layoutlib-api-23.2.0.jar
+Download https://jcenter.bintray.com/com/android/tools/dvlib/23.2.0/dvlib-23.2.0.jar
+Download https://jcenter.bintray.com/com/android/tools/lint/lint-api/23.2.0/lint-api-23.2.0.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-analysis/4.0/asm-analysis-4.0.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1.jar
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.4/commons-codec-1.4.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm/4.0/asm-4.0.jar
+Download https://jcenter.bintray.com/com/android/tools/external/lombok/lombok-ast/0.2.2/lombok-ast-0.2.2.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/4.0/asm-tree-4.0.jar
+WARNING [Project: :app] WARNING: runProguard is deprecated (and will soon stop working); change to "minifyEnabled" instead
+WARNING [Project: :app] WARNING: runProguard is deprecated (and will soon stop working); change to "minifyEnabled" instead
+Download https://jcenter.bintray.com/com/squareup/picasso/picasso/2.3.2/picasso-2.3.2.pom
+Download https://jcenter.bintray.com/com/squareup/picasso/picasso-parent/2.3.2/picasso-parent-2.3.2.pom
+Download https://jcenter.bintray.com/com/squareup/picasso/picasso/2.3.2/picasso-2.3.2.jar
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:help
+
+Welcome to Gradle 2.1.
+
+To run a build, run gradlew <task> ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see a list of command-line options, run gradlew --help
+
+[8mha:AAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 1 mins 41.198 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+[android-lint] Collecting Android Lint files...
+[android-lint] Finding all files that match the pattern **/build/lint-results.xml
+Archiving artifacts
+ERROR: No artifacts found that match the file pattern "**/*.apk". Configuration error?
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mERROR: ‘**/*.apk’ doesn’t match anything: ‘**’ exists but not ‘**/*.apk’
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mBuild step 'Archive the artifacts' changed build result to FAILURE
+Sending e-mails to: a.dzeshko@gmail.com valery.miskevich@gmail.com
+Finished: FAILURE
