@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean name="byName" class="com.alex.dzeshko.ByNameBean">
+       <property name="message" value="Injected by name!"/>
+   </bean>
+   
+   <bean class="com.alex.dzeshko.ByTypeBean">
+       <property name="message" value="Injected by type!"/>
+   </bean>
+   
+   <bean name="byNameAndType" class="com.alex.dzeshko.ByNameAndTypeBean">
+       <property name="message" value="Injected by name and type!"/>
+   </bean>
+   
+   <bean name="aliased" class="com.alex.dzeshko.ByAliasBean">
+       <property name="message" value="Injected by alias!"/>
+   </bean>
+
+	<alias name="aliased" alias="alias"/>
+</beans>
