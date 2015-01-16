@@ -45,7 +45,10 @@
 			  	caption: 'Students'
 	  		});
 			
-			$("#theGrid").jqGrid('navGrid','#pager',{edit: true, add: true, del: true}, {url: 'students/update'}, {url: 'students/create'}, {url: 'students/delete'});
+			$("#theGrid").jqGrid('navGrid','#pager',{edit: true, add: true, del: true}, 
+					{url: 'students/update'}, 
+					{url: 'students/create',}, 
+					{url: 'students/delete'});
 		});
 	</script>	
 </head>

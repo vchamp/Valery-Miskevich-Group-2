@@ -66,7 +66,7 @@ public class UsersController {
 		User newUser = user;
 		
 		usersService.createUser(newUser);
-//		usersService.updateRoles(newUser.getId(), newUser.getRoles(), roles);
+//		usersService.updateRoles(newUser.getId(), newUser.getRoles(), newUser.getRoles());
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/update", headers="Accept=application/json")

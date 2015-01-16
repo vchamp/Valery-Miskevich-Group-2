@@ -34,6 +34,7 @@
 			        {name: 'role', index: 'role', editable: true, edittype: 'select', editoptions: {dataUrl: 'users/roles', multiple: true}}
 				],
 				ajaxSelectOptions: {},
+				
 				rowNum:10,
 			   	rowList:[10,20,30],
 			   	pager: '#adminPager',
@@ -49,7 +50,15 @@
 			  	caption: 'Users'
 	  		});
 			
-			$("#adminGrid").jqGrid('navGrid','#adminPager',{edit: false, add: true, del: true}, {url: 'users/update'}, {url: 'users/create'}, {url: 'users/delete'});
+			$("#adminGrid").jqGrid('navGrid','#adminPager',
+					{edit: false, add: true, del: true}, 
+					{url: 'users/update'}, 
+					{url: 'users/create',
+						datatype: 'json',
+				        ajaxGridOptions: { contentType: 'application/json; charset=utf-8' },
+				        mtype: 'POST'
+					}, 
+					{url: 'users/delete'});
 		});
 	</script>	
 </head>
