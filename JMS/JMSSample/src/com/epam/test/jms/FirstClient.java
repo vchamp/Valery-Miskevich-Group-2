@@ -45,7 +45,7 @@ public class FirstClient {
 				ObjectMessage message = session.createObjectMessage();
 				message.setObject(new SampleMessage("foo", i, true, "This the message from FirstClient"));
 				producer.send(message);
-				System.out.println("Sent: " + message.getObject().toString());
+//				System.out.println("Sent: " + message.getObject().toString());
 				Thread.sleep(5000);
 				i++;
 			}
@@ -54,7 +54,6 @@ public class FirstClient {
 		} catch (NamingException ex) {
 			ex.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

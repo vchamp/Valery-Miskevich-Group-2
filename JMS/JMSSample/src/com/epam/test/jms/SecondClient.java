@@ -38,7 +38,7 @@ public class SecondClient {
         try {
             context = new InitialContext(initialProperties);
             factory = (ConnectionFactory) context.lookup("ConnectionFactory");
-            destination = (Destination) context.lookup("queue1");
+            destination = (Destination) context.lookup("topic1");
             connection = factory.createConnection();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             consumer = session.createConsumer(destination);
@@ -65,6 +65,9 @@ public class SecondClient {
 				}
 			});
             connection.start();
+            while(true) {
+            	
+            }
 //            Message message = consumer.receive();	
             
 
