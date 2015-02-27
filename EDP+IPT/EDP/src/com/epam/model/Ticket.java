@@ -14,6 +14,7 @@ public class Ticket implements Serializable{
     public Ticket(String title, Price price) {
         this.title = title;
         this.price = price;
+        status = Status.FRESH;
     }
 
     public String getTitle() {

@@ -1,5 +1,7 @@
 package com.epam.message;
 
+import com.epam.adapter.Adapter;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -11,6 +13,11 @@ public class TicketChannel {
     BufferedReader in = null;
     PrintWriter out = null;
     BufferedReader inu = null;
+    private Adapter<String> adapter;
+
+    public TicketChannel(Adapter<String> adapter) {
+        this.adapter = adapter;
+    }
 
     public void connect() {
         try {
@@ -42,10 +49,9 @@ public class TicketChannel {
 
             out.println(command);
             fserver = in.readLine();
-            System.out.println(fserver);
 
             // for sample just send without looping
-            return fserver;
+            return adapter.transform(fserver);
         } catch (Exception e) {
             e.printStackTrace();
         }

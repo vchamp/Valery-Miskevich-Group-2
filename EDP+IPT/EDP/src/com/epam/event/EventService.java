@@ -19,6 +19,7 @@ public interface EventService {
         
         private EventServiceImpl() {
             listeners = new HashMap<Integer, EventListener>();
+            events = new HashMap<Integer, String>();
         }
 
         @Override

@@ -1,6 +1,7 @@
 package com.epam.message;
 
 import com.epam.TicketRepository;
+import com.epam.TicketWindow;
 import com.epam.model.Ticket;
 
 import java.io.BufferedReader;
@@ -24,18 +25,22 @@ public class TicketEndpoint {
         try {
             servers = new ServerSocket(4444);
         } catch (IOException e) {
+            e.printStackTrace();
             System.exit(-1);
         }
 
         try {
             fromСlient = servers.accept();
         } catch (IOException e) {
+            e.printStackTrace();
             System.exit(-1);
         }
 
         in = new BufferedReader(new InputStreamReader(fromСlient.getInputStream()));
         out = new PrintWriter(fromСlient.getOutputStream(), true);
         String input, output;
+
+        System.out.println("Waiting for client...");
 
         while ((input = in.readLine()) != null) {
             output = "";
